@@ -1,0 +1,53 @@
+{
+  "name": "Cause",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Name of the cause/NGO"
+    },
+    "location": {
+      "type": "string",
+      "description": "Location of the cause"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "shelter",
+        "education",
+        "water",
+        "health",
+        "food",
+        "environment"
+      ],
+      "description": "Category of the cause"
+    },
+    "description": {
+      "type": "string",
+      "description": "Short description of the cause"
+    },
+    "goal_amount": {
+      "type": "number",
+      "description": "Fundraising goal in Naira"
+    },
+    "raised_amount": {
+      "type": "number",
+      "default": 0,
+      "description": "Amount raised so far in Naira"
+    },
+    "image_url": {
+      "type": "string",
+      "description": "Image URL for the cause"
+    },
+    "is_verified": {
+      "type": "boolean",
+      "default": true,
+      "description": "Whether the cause is verified"
+    }
+  },
+  "required": [
+    "name",
+    "category",
+    "goal_amount"
+  ]
+}

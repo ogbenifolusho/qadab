@@ -1,0 +1,66 @@
+{
+  "name": "Donation",
+  "type": "object",
+  "properties": {
+    "cause_id": {
+      "type": "string",
+      "description": "ID of the cause"
+    },
+    "cause_name": {
+      "type": "string",
+      "description": "Name of the cause"
+    },
+    "amount": {
+      "type": "number",
+      "description": "Donation amount in Naira"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "direct",
+        "prediction"
+      ],
+      "description": "Whether this is a direct donation or from a prediction"
+    },
+    "frequency": {
+      "type": "string",
+      "enum": [
+        "one-time",
+        "monthly"
+      ],
+      "default": "one-time",
+      "description": "Donation frequency"
+    },
+    "prediction_id": {
+      "type": "string",
+      "description": "Associated prediction ID if from a prediction"
+    },
+    "donor_name": {
+      "type": "string",
+      "description": "Name of the donor"
+    },
+    "donor_email": {
+      "type": "string",
+      "description": "Email of the donor for receipt"
+    },
+    "paystack_reference": {
+      "type": "string",
+      "description": "Paystack transaction reference"
+    },
+    "payment_status": {
+      "type": "string",
+      "enum": [
+        "pending",
+        "success",
+        "failed"
+      ],
+      "default": "pending",
+      "description": "Payment processing status"
+    }
+  },
+  "required": [
+    "cause_id",
+    "amount",
+    "type"
+  ]
+}

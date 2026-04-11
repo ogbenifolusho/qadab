@@ -1,0 +1,52 @@
+{
+  "name": "Prediction",
+  "type": "object",
+  "properties": {
+    "event_id": {
+      "type": "string",
+      "description": "ID of the event being predicted"
+    },
+    "event_title": {
+      "type": "string",
+      "description": "Title of the event"
+    },
+    "cause_id": {
+      "type": "string",
+      "description": "ID of the cause to donate to"
+    },
+    "cause_name": {
+      "type": "string",
+      "description": "Name of the cause"
+    },
+    "selected_outcome": {
+      "type": "string",
+      "description": "The user's predicted outcome"
+    },
+    "pledge_amount": {
+      "type": "number",
+      "description": "Amount pledged in Naira"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "pending",
+        "correct",
+        "incorrect",
+        "cancelled"
+      ],
+      "default": "pending",
+      "description": "Status of the prediction"
+    },
+    "donated": {
+      "type": "boolean",
+      "default": false,
+      "description": "Whether the donation has been made"
+    }
+  },
+  "required": [
+    "event_id",
+    "cause_id",
+    "selected_outcome",
+    "pledge_amount"
+  ]
+}

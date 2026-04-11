@@ -1,0 +1,75 @@
+{
+  "name": "Event",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string",
+      "description": "Title of the event"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "football",
+        "elections",
+        "milestones",
+        "entertainment",
+        "sports",
+        "other"
+      ],
+      "description": "Event category"
+    },
+    "description": {
+      "type": "string",
+      "description": "Description of the event"
+    },
+    "options": {
+      "type": "array",
+      "description": "Possible outcomes for prediction",
+      "items": {
+        "type": "object",
+        "properties": {
+          "label": {
+            "type": "string"
+          },
+          "value": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "event_date": {
+      "type": "string",
+      "format": "date-time",
+      "description": "When the event takes place"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "upcoming",
+        "live",
+        "completed",
+        "cancelled"
+      ],
+      "default": "upcoming",
+      "description": "Current status of the event"
+    },
+    "correct_outcome": {
+      "type": "string",
+      "description": "The correct outcome after event completes"
+    },
+    "image_url": {
+      "type": "string",
+      "description": "Event image URL"
+    },
+    "pledge_amount": {
+      "type": "number",
+      "default": 100,
+      "description": "Fixed pledge amount in Naira set by admin (default \u20a6100)"
+    }
+  },
+  "required": [
+    "title",
+    "category",
+    "options"
+  ]
+}
